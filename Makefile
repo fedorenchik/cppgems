@@ -7,7 +7,7 @@ most_recent_source := $(shell ls -At $(wildcard $(c_cpp_wildcards)) | head -1)
 .DEFAULT_GOAL := $(basename $(most_recent_source))
 
 CFLAGS += -Wall -Wextra -ggdb3 -O0
-CXXFLAGS += $(CFLAGS)
+CXXFLAGS += $(CFLAGS) -std=c++17
 LDFLAGS += -rdynamic -lm -pthread
 
 binaries := $(basename $(wildcard $(c_cpp_wildcards)))
